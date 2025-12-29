@@ -85,7 +85,7 @@ pipeline
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/testautomation093/SeleniumAutomationFWPractice.git'
+                    git 'https://github.com/testautomation093/August2025SeleniumAutomationFW.git'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml -Denv=dev"
                     
                 }
@@ -117,7 +117,7 @@ pipeline
         stage('Sanity Automation Test on PROD') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/testautomation093/SeleniumAutomationFWPractice.git'
+                    git 'https://github.com/testautomation093/August2025SeleniumAutomationFW.git'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml -Denv=prod"
                     
                 }
