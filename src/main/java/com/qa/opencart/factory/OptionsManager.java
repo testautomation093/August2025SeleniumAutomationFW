@@ -44,6 +44,10 @@ public class OptionsManager {
 			co.addArguments("--incognito");
 			
 		}
+		if(Boolean.parseBoolean(prop.getProperty("remote")))
+				{
+			co.setCapability("browserName", "chrome");
+				}
 		
 	return co;
 		
@@ -65,6 +69,10 @@ public class OptionsManager {
 			fo.addArguments("--incognito");
 			
 		}
+		if(Boolean.parseBoolean(prop.getProperty("remote")))
+		{
+	     fo.setCapability("browserName", "firefox");
+		}
 		
 	return fo;
 		
@@ -85,6 +93,10 @@ public class OptionsManager {
 			log.info("Running All Test cases in Edge Incognito mode");
 			eo.addArguments("--inPrivate");
 			
+		}
+		if(Boolean.parseBoolean(prop.getProperty("remote")))
+		{
+	    eo.setCapability("browserName", "MicrosoftEdge");
 		}
 		
 	return eo;
